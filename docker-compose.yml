@@ -3,6 +3,7 @@ version: '3'
 services: 
 
     devops:
+        image: dockerisedenvs/devops_iac
         build:
             context: .
             args: 
