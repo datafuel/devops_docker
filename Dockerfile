@@ -21,12 +21,12 @@ RUN pip install --upgrade pip
 RUN pip install awscli
 RUN cd /usr/local/bin && git clone https://github.com/tfutils/tfenv.git ./.tfenv
 
-ARG AWS_ACCESS_KEY_ID
-ARG AWS_SECRET_ACCESS_KEY
+# ARG AWS_ACCESS_KEY_ID
+# ARG AWS_SECRET_ACCESS_KEY
 
 ENV PATH "/usr/local/bin/.tfenv/bin:${PATH}"
-ENV AWS_ACCESS_KEY_ID $AWS_ACCESS_KEY_ID
-ENV AWS_SECRET_ACCESS_KEY $AWS_SECRET_ACCESS_KEY
+# ENV AWS_ACCESS_KEY_ID $AWS_ACCESS_KEY_ID
+# ENV AWS_SECRET_ACCESS_KEY $AWS_SECRET_ACCESS_KEY
 
 RUN tfenv install 0.12.29 && tfenv use 0.12.29
 
