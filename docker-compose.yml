@@ -1,12 +1,17 @@
 version: '3'
 
-services: 
+services:
 
     devops:
-        image: dockerisedenvs/devops_iac
+        image: dockerisedenvs/iac_devops
         build:
             context: .
-            args: 
-                - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
-                - AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
-        image: dockerisedenvs/iac_devops
+        environment:
+            - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+            - AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+            - AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
+        volumes:
+            - ./modules:/opt/workspace/modules
+            - ./devops:/opt/workspace/devops
+        stdin_open: true # docker run -i
+        tty: true
