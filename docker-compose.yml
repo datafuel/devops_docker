@@ -2,8 +2,9 @@ version: '3'
 
 services:
 
-    devops:
-        image: dockerisedenvs/iac_devops
+    terraform_docker:
+        image: datafuel/terraform_docker
+        container_name: terraform_docker
         build:
             context: .
         environment:
@@ -12,6 +13,6 @@ services:
             - AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
         volumes:
             - ./modules:/opt/workspace/modules
-            - ./devops:/opt/workspace/devops
+            - ./environments:/opt/workspace/environments
         stdin_open: true # docker run -i
         tty: true
