@@ -30,8 +30,8 @@ jobs:
 
       - name: Log into GitHub Container Registry
         env: 
-          docker_login: ${{ secrets.DOCKER_USERNAME }}
-          docker_password: ${{ secrets.DOCKER_PASSWORD }} 
+          docker_login: ${{ secrets.DATAFUEL_DOCKER_USERNAME }}
+          docker_password: ${{ secrets.DATAFUEL_DOCKER_PASSWORD }} 
         run: docker login -u $docker_login --password $docker_password
 
       - name: Push image to GitHub Container Registry
