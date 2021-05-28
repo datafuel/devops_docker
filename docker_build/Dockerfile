@@ -22,8 +22,6 @@ RUN pip install awscli
 RUN cd /usr/local/bin && git clone https://github.com/tfutils/tfenv.git ./.tfenv
 
 ENV PATH "/usr/local/bin/.tfenv/bin:${PATH}"
-ENV AWS_ACCESS_KEY_ID $AWS_ACCESS_KEY_ID
-ENV AWS_SECRET_ACCESS_KEY $AWS_SECRET_ACCESS_KEY
 
 RUN tfenv install ${tf_version} && tfenv use ${tf_version}
 
