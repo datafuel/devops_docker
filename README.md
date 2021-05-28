@@ -27,6 +27,7 @@ docker-compose up -d
 6. To ssh into the container run :
 ```
 docker exec -it terraform_docker bash
+```
 
 ## Organization
 - Create modules inside **/modules**
